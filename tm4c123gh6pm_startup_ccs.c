@@ -34,9 +34,6 @@ static void NmiSR(void);
 static void FaultISR(void);
 static void IntDefaultHandler(void);
 
-void ADC0SS0_Handler(void);
-void ADC0SS1_Handler(void);
-
 //*****************************************************************************
 //
 // External declaration for the reset handler that is to be called when the
@@ -100,8 +97,8 @@ void (* const g_pfnVectors[])(void) =
     IntDefaultHandler,                      // PWM Generator 1
     IntDefaultHandler,                      // PWM Generator 2
     IntDefaultHandler,                      // Quadrature Encoder 0
-    ADC0SS0_Handler,                        // ADC Sequence 0
-    ADC0SS1_Handler,                        // ADC Sequence 1
+    IntDefaultHandler,                      // ADC Sequence 0
+    IntDefaultHandler,                      // ADC Sequence 1
     IntDefaultHandler,                      // ADC Sequence 2
     IntDefaultHandler,                      // ADC Sequence 3
     IntDefaultHandler,                      // Watchdog timer
